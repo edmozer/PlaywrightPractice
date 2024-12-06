@@ -38,5 +38,6 @@ test('Test login with valid credentials followed by logout', async ({ page }) =>
 
     await homePage.clickLogout();
 
-
+    const loginPageTitle = page.locator('h1');
+    expect(await loginPageTitle.textContent()).toContain('Login');
   });
